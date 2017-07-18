@@ -1,0 +1,18 @@
+<form class="search-country-form" [formGroup]="formCountrySearch" (ngSubmit)="onCountrySearchSubmit($event)">
+    <input type="text" class="text form-control" id="searchCountry" required maxlength="20" 
+    [formControl]="formCountrySearch.controls['searchCountry']">
+    
+    
+    <button 
+       type="submit" 
+       class="btn btn-search-country">Search Country</button>
+</form>
+
+<form class="search-city-form" [formGroup]="formCitySearch>
+
+    <select required 
+    [formControl]="formCitySearch.controls['searchCity']" (change)="onCitySelectChange($event)">
+       <option value="">Select City</option>
+       <option [value]="city.description" *ngFor="let day of cityList">{{city.description}}</option>
+    </select>
+</form>
